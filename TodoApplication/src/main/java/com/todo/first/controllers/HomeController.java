@@ -1,5 +1,6 @@
 package com.todo.first.controllers;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -8,6 +9,8 @@ import java.util.List;
 
 @RestController
 public class HomeController {
+    @Value("${spring.profile.image.path}")
+    private String profilePath;
 
     @RequestMapping("/todos")
     public List<String> justTest() {
@@ -20,5 +23,10 @@ public class HomeController {
                 "Learn Node JS"
         );
         return todos;
+    }
+
+    @RequestMapping("/profile-path")
+    public String getProfilePath(){
+        return this.profilePath;
     }
 }
