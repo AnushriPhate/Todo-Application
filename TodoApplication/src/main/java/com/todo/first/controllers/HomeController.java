@@ -11,7 +11,14 @@ public class HomeController {
 
     @RequestMapping("/todos")
     public List<String> justTest() {
-        List<String> todos = Arrays.asList("Learn java", "Learn SpringBoot", "Develop project");
+        List<String> todos = Arrays.asList(
+                "Learn java",
+                "Learn SpringBoot",
+                "Develop project",
+                "Learn Django",
+                "Learn Spring",
+                "Learn Node JS"
+        );
         return todos;
     }
 }
